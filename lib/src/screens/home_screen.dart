@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:your_app_name/src/screens/favorite_places_list_screen.dart'; // Assuming you create this
-import 'package:your_app_name/src/screens/notes_screen.dart'; // Assuming you have a notes screen
+import 'package:places_notes_app/src/screens/favorite_places_list_screen.dart'; // Assuming you create this
+import 'package:places_notes_app/src/screens/notes_screen.dart'; // Assuming you have a notes screen
 
 class HomeScreen extends StatefulWidget {
   @override
