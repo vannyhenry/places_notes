@@ -11,8 +11,8 @@ class NotesScreen extends StatelessWidget {
       ),
       body: const Center(
         child: Text(
-          'Notes Section (Placeholder)',
-          style: TextStyle(fontSize: 24),
+          'No note yet. Add some!',
+          style: TextStyle(fontSize: 14),
         ),
       ),
       floatingActionButton: FloatingActionButton(

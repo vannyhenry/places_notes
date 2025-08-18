@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:places_notes_app/src/screens/favorite_places_list_screen.dart'; // Assuming you create this
+import 'package:places_notes_app/src/screens/favourite_places_list_screen.dart'; // Assuming you create this
 import 'package:places_notes_app/src/screens/notes_screen.dart'; // Assuming you have a notes screen
 
 class HomeScreen extends StatefulWidget {
@@ -25,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home'),
+        title: Text('Your Favourite Places'),
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
@@ -38,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.place),
-            label: 'Favorite Places',
+            label: 'Favourite Places',
           ),
         ],
         currentIndex: _selectedIndex,

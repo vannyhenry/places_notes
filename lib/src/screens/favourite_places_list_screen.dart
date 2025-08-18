@@ -10,7 +10,7 @@ class FavoritePlacesListScreen extends StatelessWidget {
     final user = FirebaseAuth.instance.currentUser;
 
     if (user == null) {
-      return Center(child: Text('Please log in to view favorite places.'));
+      return Center(child: Text('Please log in to view favourite places.'));
     }
 
     return Scaffold(
@@ -24,7 +24,7 @@ class FavoritePlacesListScreen extends StatelessWidget {
         stream: FirebaseFirestore.instance
             .collection('users')
             .doc(user.uid)
-            .collection('favorite_places')
+            .collection('favourite_places')
             .snapshots(),
         builder: (ctx, AsyncSnapshot<QuerySnapshot> placesSnapshot) {
           if (placesSnapshot.connectionState == ConnectionState.waiting) {
@@ -34,7 +34,7 @@ class FavoritePlacesListScreen extends StatelessWidget {
             return Center(child: Text('Error: ${placesSnapshot.error}'));
           }
           if (!placesSnapshot.hasData || placesSnapshot.data!.docs.isEmpty) {
-            return Center(child: Text('No favorite places yet. Add some!'));
+            return Center(child: Text('No favourite places yet. Add some!'));
           }
 
           final loadedPlaces = placesSnapshot.data!.docs
