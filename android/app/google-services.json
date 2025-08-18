@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "594351917684",
+    "project_id": "places-notes-app",
+    "storage_bucket": "places-notes-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:594351917684:android:8d0336b92aa9705f499f21",
+        "android_client_info": {
+          "package_name": "com.example.places_notes_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoJBdejceBefSWe5AmT8-h4GkqUG1b6yA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
