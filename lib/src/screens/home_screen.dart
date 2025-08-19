@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:places_notes_app/src/screens/add_place_screen.dart';
 import 'package:places_notes_app/src/screens/favourite_places_list_screen.dart';
 import 'package:places_notes_app/src/screens/notes_screen.dart';
+import 'package:places_notes_app/src/screens/profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -14,6 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
   static final List<Widget> _widgetOptions = <Widget>[
     NotesScreen(),
     FavoritePlacesListScreen(),
+    ProfileScreen(), 
   ];
 
   void _onItemTapped(int index) {
@@ -25,6 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<String> _titles = [
     'Your Notes',
     'Favourite Places',
+    'Profile',
   ];
 
   @override
@@ -123,6 +126,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 icon: Icon(Icons.place_outlined),
                 activeIcon: Icon(Icons.place, color: Colors.green),
                 label: 'Favourite Places',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.person_outline),
+                activeIcon: Icon(Icons.person, color: Colors.green),
+                label: 'Profile',
               ),
             ],
             currentIndex: _selectedIndex,
