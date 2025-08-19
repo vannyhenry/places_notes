@@ -12,9 +12,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
   final _titleController = TextEditingController();
   final _contentController = TextEditingController();
 
-  void _saveNote() {
-    // Implement your Firebase Firestore logic here
-    // to save the note's title and content.
+  void _saveNote() async {
     final title = _titleController.text;
     final content = _contentController.text;
 
@@ -25,26 +23,28 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
       return;
     }
 
-     FirebaseFirestore.instance.collection('notes').add({
-       'title': title,
-       'content': content,
-       'timestamp': FieldValue.serverTimestamp(),
-     });
+    try {
+      await FirebaseFirestore.instance.collection('notes').add({
+        'title': title,
+        'content': content,
+        'timestamp': FieldValue.serverTimestamp(),
+      });
 
-    // After saving, you can navigate back to the previous screen.
-    Navigator.of(context).pop();
-
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Note saved successfully!')),
-    );
+      // Navigate back to the previous screen after saving
+      Navigator.of(
+        context,
+      ).pop(true); // Optionally pass true to indicate success
+    } catch (e) {
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text('Failed to save note: $e')));
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Add a New Note'),
-      ),
+      appBar: AppBar(title: const Text('Add a New Note')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
