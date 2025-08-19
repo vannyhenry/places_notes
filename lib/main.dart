@@ -9,41 +9,6 @@ import 'package:places_notes_app/src/screens/auth_screen.dart';
 import 'package:places_notes_app/src/screens/login_screen.dart';
 import 'package:places_notes_app/src/screens/register_screen.dart'; // Import the AuthScreen
 
-// void main() async {
-//   WidgetsFlutterBinding.ensureInitialized();
-//   await Firebase.initializeApp(
-//     options: DefaultFirebaseOptions.currentPlatform,
-//   );
-//   runApp(const MyApp());
-// }
-
-// class MyApp extends StatelessWidget {
-//   const MyApp({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       title: 'Favorite Places App',
-//       theme: ThemeData(
-//         primarySwatch: Colors.blue,
-//         useMaterial3: true,
-//       ),
-//       debugShowCheckedModeBanner: false,
-//       home: StreamBuilder<User?>(
-//         stream: FirebaseAuth.instance.authStateChanges(),
-//         builder: (context, snapshot) {
-//           if (snapshot.connectionState == ConnectionState.waiting) {
-//             return const CircularProgressIndicator();
-//           }
-//           if (snapshot.hasData) {
-//             return HomeScreen(); // User is logged in, show home screen
-//           }
-//           return const AuthScreen(); // Use AuthScreen as the entry point for authentication
-//         },
-//       ),
-//     );
-//   }
-// }
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
@@ -71,7 +36,7 @@ class MyApp extends StatelessWidget {
           return const AuthScreen();
         },
       ),
-      // Define all your app's routes here
+
       routes: {
         '/login': (context) => const LoginScreen(),
         '/register': (context) => const RegisterScreen(),
